@@ -3,8 +3,8 @@ const button = form.querySelector('button');
 
 document.querySelectorAll('#sign-up-form label').forEach(labelTag => {
   const inputTag = labelTag.querySelector('input') ? labelTag.querySelector('input') : labelTag.querySelector('select');
-  labelTag.addEventListener('change', () => labelTag.classList.add('focused'));
-  labelTag.addEventListener('click', () => labelTag.classList.add('focused'));
+  inputTag.addEventListener('focus', () => labelTag.classList.add('focused'));
+  inputTag.addEventListener('change', () => labelTag.classList.add('focused'));
 
   labelTag.addEventListener("focusout", () => {
     if (inputTag.value.length === 0) {
