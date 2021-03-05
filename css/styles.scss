@@ -23,6 +23,15 @@ main {
     font-weight: bold;
   }
 
+  .errors {
+    color: red;
+    font-size: 0.9rem;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 1s, opacity 1s;
+  }
+
   .main-content {
     width: 65%;
     padding: 40px;
@@ -76,7 +85,8 @@ main {
           position: relative;
 
           &,
-          input {
+          input,
+          select {
             width: 100%;
           }
 
@@ -95,10 +105,24 @@ main {
             background-color: #fff;
             top: 2px;
           }
+
+          &.invalid span,
+          &.invalid::before {
+            color: red;
+          }
+
+          &.invalid input {
+            border: 1px solid red;
+          }
+
+          &.invalid .errors {
+            height: auto;
+            opacity: 1;
+          }
         }
 
         input,
-        select,{
+        select {
           margin: 10px 0;
           padding: 15px 10px;
           border: 1px solid rgba(0, 0, 0, 0.089);
@@ -126,6 +150,7 @@ main {
         }
 
         button[type="submit"] {
+          width: 100%;
           padding: 20px 0;
           background-color: $sign-up-button;
           color: #fff;
@@ -135,7 +160,7 @@ main {
           font-weight: bold;
         }
 
-        button[type="submit"]:disabled {
+        button[type="submit"].disabled {
           background-color: rgba(0, 0, 0, 0.219);
         }
 

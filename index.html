@@ -25,32 +25,38 @@
             <label data-placeholder="Your Name">
               <span class="form-label">Name</span>
               <input type="text" id="name" name="name" required />
+              <div class="errors">Please enter valid name</div>
             </label>
             <label data-placeholder="Email address">
               <span class="form-label">Email</span>
               <input type="email" id="email" name="email" required />
+              <div class="errors">Please enter valid email address</div>
             </label>
-            <label for="user-type" class="form-label">User Type</label>
-            <select name="user-type" id="user-type" required>
-              <option value="" disabled selected hidden>
-                I would describe my user type as
-              </option>
-              <option value="developer">Developer</option>
-              <option value="hr">Human Resource</option>
-              <option value="it">IT personnel</option>
-            </select>
+            <label>
+              <span class="form-label">User Type</span>
+              <select name="user-type" id="user-type" required>
+                <option value="" disabled selected hidden>
+                  I would describe my user type as
+                </option>
+                <option value="developer">Developer</option>
+                <option value="hr">Human Resource</option>
+                <option value="it">IT personnel</option>
+              </select>
+              <div class="errors">Please select a valid option</div>
+            </label>
             <label data-placeholder="Password">
               <span class="form-label">Password</span>
               <input
-              type="password"
-              name="password"
-              id="password"
-              minlength="8"
-              required
-            />
+                type="password"
+                name="password"
+                id="password"
+                minlength="8"
+                required
+              />
+              <div class="errors">Please enter valid password</div>
             </label>
             <p class="password-info">Minimum 8 characters</p>
-            <button type="submit" disabled>Next</button>
+            <button type="submit" class="disabled">Next</button>
             <p class="form-disclaimer">
               By clicking "Next" button, you agree to creating a free account,
               and to <a href="#">Terms of Service</a> and
