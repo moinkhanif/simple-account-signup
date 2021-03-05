@@ -1,2 +1,52 @@
 $sidebar-background: #286efa;
 $sign-up-button: #286efa;
+$steps-size: 5px;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+
+  .main-content {
+    width: 65%;
+    padding: 40px;
+
+    .steps {
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-weight: bold;
+
+        .steps-text {
+          margin-right: 10px;
+        }
+
+        .steps-icon {
+          display: inline-block;
+          height: $steps-size;
+          width: $steps-size;
+          margin: auto 5px;
+          background-color: rgba(0, 0, 0, 0.281);
+          border-radius: 100%;
+        }
+
+        .steps-icon.active {
+          background-color: #000;
+        }
+      }
+    }
+  }
+
+  .sidebar-content {
+    width: 35%;
+  }
+}
