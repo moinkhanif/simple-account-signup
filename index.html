@@ -1,12 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desktop - Create Account</title>
-</head>
-<body>
-  <h1>Initializing Project!</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Desktop - Create Account</title>
+  </head>
+  <body>
+    <main>
+      <div class="main-content">
+        <div class="steps">
+          <p>
+            <span class="steps-text">Steps 1 of 3</span>
+            <span class="steps-icon active"></span>
+            <span class="steps-icon"></span>
+            <span class="steps-icon"></span>
+          </p>
+        </div>
+        <section class="form-section">
+          <form id="sign-up-form" action="/">
+            <h1>Let's set up your account</h1>
+            <p class="already-signed-up">Already have an account? <a href="#">Sign in</a></p>
+            <label data-placeholder="Your Name">
+              <span class="form-label">Name</span>
+              <input type="text" id="name" name="name" required />
+              <div class="errors">Please enter valid name</div>
+            </label>
+            <label data-placeholder="Email address">
+              <span class="form-label">Email</span>
+              <input type="email" id="email" name="email" required />
+              <div class="errors">Please enter valid email address</div>
+            </label>
+            <label>
+              <span class="form-label">User Type</span>
+              <select name="user-type" id="user-type" required>
+                <option value="" disabled selected hidden>
+                  I would describe my user type as
+                </option>
+                <option value="developer">Developer</option>
+                <option value="hr">Human Resource</option>
+                <option value="it">IT personnel</option>
+              </select>
+              <div class="errors">Please select a valid option</div>
+            </label>
+            <label data-placeholder="Password">
+              <span class="form-label">Password</span>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                minlength="8"
+                required
+              />
+              <div class="errors">Please enter valid password</div>
+            </label>
+            <p class="password-info">Minimum 8 characters</p>
+            <button type="submit" class="disabled">Next</button>
+            <p class="form-disclaimer">
+              By clicking "Next" button, you agree to creating a free account,
+              and to <a href="#">Terms of Service</a> and
+              <a href="#">Privacy Policy</a>
+            </p>
+          </form>
+        </section>
+      </div>
+      <div class="sidebar-content">
+        <h2>Dummy Heading</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quae,
+          laboriosam saepe optio repellendus aliquam placeat. Cum sunt, placeat
+          ducimus nemo eaque amet porro saepe explicabo ad, sint quidem nisi.
+        </p>
+      </div>
+    </main>
+    <script src="./js/main.js"></script>
+  </body>
 </html>

@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$sidebar-background: #286efa;
+$sign-up-button: #286efa;
+$steps-size: 5px;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+
+  a {
+    color: #286efa;
+    font-weight: bold;
+  }
+
+  .errors {
+    color: red;
+    font-size: 0.9rem;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 1s, opacity 1s;
+  }
+
+  .main-content {
+    width: 65%;
+    padding: 40px;
+
+    .steps {
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-weight: bold;
+
+        .steps-text {
+          margin-right: 10px;
+        }
+
+        .steps-icon {
+          display: inline-block;
+          height: $steps-size;
+          width: $steps-size;
+          margin: auto 5px;
+          background-color: rgba(0, 0, 0, 0.281);
+          border-radius: 100%;
+        }
+
+        .steps-icon.active {
+          background-color: #000;
+        }
+      }
+    }
+
+    .form-section {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .form-label {
+        display: none;
+      }
+
+      #sign-up-form {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+
+        & > h1 {
+          font-size: 2rem;
+        }
+
+        label {
+          position: relative;
+
+          &,
+          input,
+          select {
+            width: 100%;
+          }
+
+          &::before {
+            content: attr(data-placeholder);
+            display: block;
+            position: absolute;
+            left: 20px;
+            color: gray;
+            top: 24px;
+            transition: top 400ms, font-size 400ms;
+          }
+
+          &.focused::before {
+            font-size: 0.9rem;
+            background-color: #fff;
+            top: 2px;
+          }
+
+          &.invalid span,
+          &.invalid::before {
+            color: red;
+          }
+
+          &.invalid input {
+            border: 1px solid red;
+          }
+
+          &.invalid .errors {
+            height: auto;
+            opacity: 1;
+          }
+        }
+
+        input,
+        select {
+          margin: 10px 0;
+          padding: 15px 10px;
+          border: 1px solid rgba(0, 0, 0, 0.089);
+        }
+
+        input,
+        select,
+        button[type="submit"] {
+          border-radius: 5px;
+        }
+
+        select {
+          cursor: pointer;
+          color: rgba(0, 0, 0, 0.753);
+        }
+
+        .password-info {
+          margin: 10px 0;
+          font-size: 0.9rem;
+          color: gray;
+        }
+
+        .already-signed-up {
+          padding: 50px 0;
+        }
+
+        button[type="submit"] {
+          width: 100%;
+          padding: 20px 0;
+          background-color: $sign-up-button;
+          color: #fff;
+          border: none;
+          cursor: pointer;
+          margin: 30px 0;
+          font-weight: bold;
+        }
+
+        button[type="submit"].disabled {
+          background-color: rgba(0, 0, 0, 0.219);
+        }
+
+        .form-disclaimer {
+          font-size: 0.9rem;
+          line-height: 2;
+        }
+      }
+    }
+  }
+
+  .sidebar-content {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: $sidebar-background;
+    color: #fff;
+
+    & > * {
+      max-width: 70%;
+    }
+
+    h2 {
+      margin: 70px 0;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+    }
+
+    p {
+      line-height: 1.9;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+  }
+}
