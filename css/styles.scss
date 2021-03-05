@@ -14,6 +14,12 @@ $steps-size: 5px;
 main {
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+
+  a {
+    color: #286efa;
+    font-weight: bold;
+  }
 
   .main-content {
     width: 65%;
@@ -41,6 +47,40 @@ main {
 
         .steps-icon.active {
           background-color: #000;
+        }
+      }
+    }
+
+    .form-section {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .form-label {
+        display: none;
+      }
+
+      #sign-up-form {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+
+        input,
+        select {
+          margin: 10px 0;
+          padding: 15px 10px;
+          border: 1px solid rgba(0, 0, 0, 0.089);
+          border-radius: 5px;
+        }
+
+        select {
+          cursor: pointer;
+          color: rgba(0, 0, 0, 0.753);
+        }
+
+        .already-signed-up {
+          padding: 50px 0;
         }
       }
     }
