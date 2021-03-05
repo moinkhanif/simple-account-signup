@@ -87,7 +87,7 @@ main {
             left: 20px;
             color: gray;
             top: 24px;
-            transition: top 600ms;
+            transition: top 400ms, font-size 400ms;
           }
 
           &.focused::before {
@@ -98,7 +98,7 @@ main {
         }
 
         input,
-        select {
+        select,{
           margin: 10px 0;
           padding: 15px 10px;
           border: 1px solid rgba(0, 0, 0, 0.089);
