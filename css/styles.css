@@ -85,6 +85,10 @@ main .main-content .form-section #sign-up-form {
           flex-direction: column;
 }
 
+main .main-content .form-section #sign-up-form > h1 {
+  font-size: 2rem;
+}
+
 main .main-content .form-section #sign-up-form input,
 main .main-content .form-section #sign-up-form select {
   margin: 10px 0;
@@ -134,5 +138,37 @@ main .main-content .form-section #sign-up-form .form-disclaimer {
 
 main .sidebar-content {
   width: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px;
+  background-color: #286efa;
+  color: #fff;
+}
+
+main .sidebar-content > * {
+  max-width: 70%;
+}
+
+main .sidebar-content h2 {
+  margin: 70px 0;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+main .sidebar-content p {
+  line-height: 1.9;
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 /*# sourceMappingURL=styles.css.map */
