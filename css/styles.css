@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+}
+
+main a {
+  color: #286efa;
+  font-weight: bold;
+}
+
+main .errors {
+  color: red;
+  font-size: 0.9rem;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: height 1s, opacity 1s;
+  transition: height 1s, opacity 1s;
+}
+
+main .main-content {
+  width: 65%;
+  padding: 40px;
+}
+
+main .main-content .steps p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-weight: bold;
+}
+
+main .main-content .steps p .steps-text {
+  margin-right: 10px;
+}
+
+main .main-content .steps p .steps-icon {
+  display: inline-block;
+  height: 5px;
+  width: 5px;
+  margin: auto 5px;
+  background-color: rgba(0, 0, 0, 0.281);
+  border-radius: 100%;
+}
+
+main .main-content .steps p .steps-icon.active {
+  background-color: #000;
+}
+
+main .main-content .form-section {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .main-content .form-section .form-label {
+  display: none;
+}
+
+main .main-content .form-section #sign-up-form {
+  max-width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .main-content .form-section #sign-up-form > h1 {
+  font-size: 2rem;
+}
+
+main .main-content .form-section #sign-up-form label {
+  position: relative;
+}
+
+main .main-content .form-section #sign-up-form label,
+main .main-content .form-section #sign-up-form label input,
+main .main-content .form-section #sign-up-form label select {
+  width: 100%;
+}
+
+main .main-content .form-section #sign-up-form label::before {
+  content: attr(data-placeholder);
+  display: block;
+  position: absolute;
+  left: 20px;
+  color: gray;
+  top: 24px;
+  -webkit-transition: top 400ms, font-size 400ms;
+  transition: top 400ms, font-size 400ms;
+}
+
+main .main-content .form-section #sign-up-form label.focused::before {
+  font-size: 0.9rem;
+  background-color: #fff;
+  top: 2px;
+}
+
+main .main-content .form-section #sign-up-form label.invalid span, main .main-content .form-section #sign-up-form label.invalid::before {
+  color: red;
+}
+
+main .main-content .form-section #sign-up-form label.invalid input {
+  border: 1px solid red;
+}
+
+main .main-content .form-section #sign-up-form label.invalid .errors {
+  height: auto;
+  opacity: 1;
+}
+
+main .main-content .form-section #sign-up-form input,
+main .main-content .form-section #sign-up-form select {
+  margin: 10px 0;
+  padding: 15px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.089);
+}
+
+main .main-content .form-section #sign-up-form input,
+main .main-content .form-section #sign-up-form select,
+main .main-content .form-section #sign-up-form button[type="submit"] {
+  border-radius: 5px;
+}
+
+main .main-content .form-section #sign-up-form select {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.753);
+}
+
+main .main-content .form-section #sign-up-form .password-info {
+  margin: 10px 0;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+main .main-content .form-section #sign-up-form .already-signed-up {
+  padding: 50px 0;
+}
+
+main .main-content .form-section #sign-up-form button[type="submit"] {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #286efa;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 30px 0;
+  font-weight: bold;
+}
+
+main .main-content .form-section #sign-up-form button[type="submit"].disabled {
+  background-color: rgba(0, 0, 0, 0.219);
+}
+
+main .main-content .form-section #sign-up-form .form-disclaimer {
+  font-size: 0.9rem;
+  line-height: 2;
+}
+
+main .sidebar-content {
+  width: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px;
+  background-color: #286efa;
+  color: #fff;
+}
+
+main .sidebar-content > * {
+  max-width: 70%;
+}
+
+main .sidebar-content h2 {
+  margin: 70px 0;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+main .sidebar-content p {
+  line-height: 1.9;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+/*# sourceMappingURL=styles.css.map */
