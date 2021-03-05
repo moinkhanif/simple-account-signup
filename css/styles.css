@@ -89,6 +89,32 @@ main .main-content .form-section #sign-up-form > h1 {
   font-size: 2rem;
 }
 
+main .main-content .form-section #sign-up-form label {
+  position: relative;
+}
+
+main .main-content .form-section #sign-up-form label,
+main .main-content .form-section #sign-up-form label input {
+  width: 100%;
+}
+
+main .main-content .form-section #sign-up-form label::before {
+  content: attr(data-placeholder);
+  display: block;
+  position: absolute;
+  left: 20px;
+  color: gray;
+  top: 24px;
+  -webkit-transition: top 600ms;
+  transition: top 600ms;
+}
+
+main .main-content .form-section #sign-up-form label.focused::before {
+  font-size: 0.9rem;
+  background-color: #fff;
+  top: 2px;
+}
+
 main .main-content .form-section #sign-up-form input,
 main .main-content .form-section #sign-up-form select {
   margin: 10px 0;

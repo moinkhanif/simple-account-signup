@@ -72,6 +72,31 @@ main {
           font-size: 2rem;
         }
 
+        label {
+          position: relative;
+
+          &,
+          input {
+            width: 100%;
+          }
+
+          &::before {
+            content: attr(data-placeholder);
+            display: block;
+            position: absolute;
+            left: 20px;
+            color: gray;
+            top: 24px;
+            transition: top 600ms;
+          }
+
+          &.focused::before {
+            font-size: 0.9rem;
+            background-color: #fff;
+            top: 2px;
+          }
+        }
+
         input,
         select {
           margin: 10px 0;
