@@ -4,6 +4,8 @@ form.addEventListener('change', (e) => {
   const button = form.querySelector('button');
   if (form.checkValidity()) {
     button.classList.remove('disabled')
+  } else {
+    button.classList.add('disabled')
   }
 })
 
