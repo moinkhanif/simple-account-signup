@@ -1,11 +1,18 @@
-const form = document.querySelector('#sign-up-form');
-const button = form.querySelector('button');
+const form = document.forms['sign-up-form'];
+
+form.addEventListener('change', (e) => {
+  const button = form.querySelector('button');
+  if (form.checkValidity()) {
+    button.classList.remove('disabled')
+  } else {
+    button.classList.add('disabled')
+  }
+})
 
 document.querySelectorAll('#sign-up-form label').forEach(labelTag => {
   const inputTag = labelTag.querySelector('input') ? labelTag.querySelector('input') : labelTag.querySelector('select');
   inputTag.addEventListener('focus', () => labelTag.classList.add('focused'));
   inputTag.addEventListener('change', () => labelTag.classList.add('focused'));
-
   labelTag.addEventListener("focusout", () => {
     if (inputTag.value.length === 0) {
       labelTag.classList.remove('focused');
@@ -16,19 +23,6 @@ document.querySelectorAll('#sign-up-form label').forEach(labelTag => {
       } else {
         labelTag.classList.remove('invalid');
       }
-      if (form.checkValidity()) {
-        button.classList.remove('disabled')
-      }
     }
   })
 })
-
-button.addEventListener('click', (e) => {
-  e.preventDefault();
-  const selectTag = document.querySelector('#sign-up-form select');
-  console.log(selectTag.value)
-  // if(selectTag.value){
-  //   selectTag.classList.add('invalid');
-  // }
-})
-
