@@ -1,5 +1,11 @@
-const form = document.querySelector('#sign-up-form');
-const button = form.querySelector('button');
+const form = document.forms['sign-up-form'];
+
+form.addEventListener('change', (e) => {
+  const button = form.querySelector('button');
+  if (form.checkValidity()) {
+    button.classList.remove('disabled')
+  }
+})
 
 document.querySelectorAll('#sign-up-form label').forEach(labelTag => {
   const inputTag = labelTag.querySelector('input') ? labelTag.querySelector('input') : labelTag.querySelector('select');
@@ -17,10 +23,4 @@ document.querySelectorAll('#sign-up-form label').forEach(labelTag => {
       }
     }
   })
-})
-
-form.addEventListener('change', (e) => {
-  if (form.checkValidity()) {
-    button.classList.remove('disabled')
-  }
 })
